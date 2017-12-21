@@ -14,10 +14,7 @@
             <label for="search"></label>
             <input id="search" class="form-control" type="text" name="name" placeholder="نام خود را وارد کنید">
         </div>
-        <button type="submit" class="btn btn-default">جستجو</button>
-    </form>
-    <form class="" action="index.html" method="post">
-
+        <button type="submit" class="btn btn-default btn-primary">جستجو</button>
     </form>
     <div class="row placeholders" style="margin-top:30px;">
         <div class="col-xs-6 col-sm-2 placeholder">
