@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('main.master');
-});
+Route::get('/', 'StudentController@index');
+
+Route::resource('student', 'StudentController' , ['except' => [
+    'index'
+]]);

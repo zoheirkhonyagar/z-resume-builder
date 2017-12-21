@@ -1,2 +1,2 @@
-@include('main.layout.footer-scripts')
+@include('admin.layout.footer-scripts')
 </html>

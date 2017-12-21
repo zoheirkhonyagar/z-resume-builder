@@ -1,14 +1,14 @@
-@include('main.layout.header')
+@include('admin.layout.header')
 
 
 
-@include('main.layout.navbar')
+@include('admin.layout.navbar')
 
 <div class="container-fluid">
     <div class="row">
-        @include('main.layout.sidebar')
-        @include('main.layout.content')
+        @include('admin.layout.sidebar')
+        @include('admin.layout.content')
     </div>
 </div>
 
-@include('main.layout.footer')
+@include('admin.layout.footer')

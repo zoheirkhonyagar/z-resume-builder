@@ -10,7 +10,7 @@
 
     <title>@yield('title')</title>
 
-    @include('main.layout.header-styles')
+    @include('admin.layout.header-styles')
 
 </head>
 <body>

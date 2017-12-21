@@ -1,12 +1,23 @@
 <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="css/bootstrap-rtl.min.css" rel="stylesheet">
+<link href="/css/bootstrap-rtl.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/dashboard.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="/css/dashboard.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
 <style>
+    .nav-sidebar li a{
+        color: #fff;
+    }
+
+    .nav-sidebar li{
+        margin: 10px 0;
+    }
+    .nav-sidebar li a:hover{
+        color: #fff;
+        background-color: #5cb85c;
+    }
     .form-control,.form-control:hover ,.form-control:active {
         box-shadow: none;
     }
