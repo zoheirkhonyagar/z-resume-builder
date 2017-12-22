@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Student;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Helper\Helper;
 
 class StudentController extends Controller
 {
@@ -15,6 +16,10 @@ class StudentController extends Controller
      */
     public function index()
     {
+        $students = Student::orderBy('first_name', 'asc')
+            ->paginate(12);
+//        $students = Student::paginate(12)->orderBy('name', 'desc');
+        //return $students;
 //        return $student = Student::create([
 //            'first_name' => 'سامان',
 //            'last_name' => 'پذیرنده',
@@ -27,8 +32,8 @@ class StudentController extends Controller
 //            'proof' => 'لیسانس کامپیوتر',
 //            'resume' => 'مدرس دوره برنامه نویسی'
 //        ]);
-
-        return view('main.index');
+        $courses = Course::all();
+        return view('main.index' , compact('students','courses'));
     }
 
     /**
@@ -75,6 +80,8 @@ class StudentController extends Controller
                 'total_score' => $request->input('total_score')
             )
         ));
+
+        return back();
     }
 
     /**
@@ -85,7 +92,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return view('main.student.show' , compact('student'));
     }
 
     /**
@@ -120,5 +127,23 @@ class StudentController extends Controller
     public function destroy(Student $student)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+
+        $course = Course::find($request->input('course_id'));
+
+        if ($request->input('first_name') == '' && $request->input('first_name') == '' ){
+            $students = $course->students;
+        }else{
+            $students = $course->students->where( 'first_name', $request->input('first_name') )->Where('last_name', $request->input('last_name'));
+        }
+
+//        $error = empt($students) ? "<h2> نتیجه ای یافت نشد ! </h2>" : "";
+//        return $students;
+//        $students = Student::orderBy('first_name', 'asc')->paginate(12);
+        $courses = Course::all();
+        return view('main.student.search' , compact('students','courses','error'));
     }
 }

@@ -16,3 +16,9 @@ Route::get('/', 'StudentController@index');
 Route::resource('student', 'StudentController' , ['except' => [
     'index'
 ]]);
+
+Route::post('/search', 'StudentController@search')->name('student.search');
+
+Route::resource('course', 'CourseController' , ['except' => [
+    'index'
+]]);

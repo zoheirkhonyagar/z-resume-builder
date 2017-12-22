@@ -24,7 +24,8 @@ class CourseController extends Controller
      */
     public function create()
     {
-
+        $courses = Course::paginate(10);
+        return view('admin.course.create' , compact('courses'));
     }
 
     /**
@@ -35,7 +36,11 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Course::create([
+            'name' => $request->input('name')
+        ]);
+
+        return back();
     }
 
     /**
@@ -57,7 +62,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        return view('admin.course.edit' , compact('course'));
     }
 
     /**
@@ -69,7 +74,10 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        //
+        $course->update([
+            'name' => $request->input('name'),
+        ]);
+        return redirect(route('course.create'));
     }
 
     /**
@@ -80,6 +88,7 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+        return back();
     }
 }

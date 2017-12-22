@@ -1,6 +1,6 @@
 @extends('main.master')
 @section('title')
-رزومه ها
+    رزومه ها
 @endsection
 
 @section('content')
@@ -36,8 +36,5 @@
                 </div>
             @endforeach
         </div>
-        @if($students->links())
-            {{ $students->links() }}
-        @endif
     </div>
 @endsection
