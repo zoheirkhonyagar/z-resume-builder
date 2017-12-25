@@ -60,6 +60,7 @@ class StudentController extends Controller
         $student = Student::create([
             'first_name' => $request->input('first_name'),
             'last_name' => $request->input('last_name'),
+            'national_number' => $request->input('national_number'),
             'father_name' => $request->input('father_name'),
             'email' => $request->input('email'),
             'nationality' => $request->input('nationality'),
