@@ -7,7 +7,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">رزومه آیدیا</a>
+            <a class="btn-warning panel-btn" href="{{ route('admin') }}">پنل مدیریت</a>
+            <a class="navbar-brand" href="/">رزومه آیدیا</a>
         </div>
     </div>
 </nav>

@@ -37,5 +37,11 @@
         background: #e8e8e8;
         margin: 0;
     }
+    .panel-btn{
+        height: 50px;
+        padding: 15px 15px;
+        font-size: 18px;
+        line-height: 40px;
+    }
 </style>
 @yield('custom-styles')

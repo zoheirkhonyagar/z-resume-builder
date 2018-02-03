@@ -48,5 +48,17 @@
         background: #e8e8e8;
         margin: 0;
     }
+
+    .nav-sidebar li.btn-danger a:hover {
+        background-color: #d9534f;
+        border-color: #d43f3a;
+    }
+
+    .panel-btn{
+        height: 50px;
+        padding: 15px 15px;
+        font-size: 18px;
+        line-height: 40px;
+    }
 </style>
 @yield('custom-styles')

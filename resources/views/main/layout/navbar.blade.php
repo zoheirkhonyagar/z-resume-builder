@@ -7,7 +7,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">رزومه آیدیا</a>
+            @if(Auth::check())
+                    <a class="btn-warning panel-btn" href="{{ route('admin') }}">پنل مدیریت</a>
+                @else
+                    <a class="btn-warning panel-btn" href="{{ route('login') }}">ورود به پنل</a>
+            @endif
+            
+            <a class="navbar-brand" href="/">رزومه آیدیا</a>
         </div>
     </div>
 </nav>
