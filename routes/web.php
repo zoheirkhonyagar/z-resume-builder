@@ -14,17 +14,12 @@ use App\User;
 */
 
 Route::get('/', 'StudentController@index');
-// Route::get('/', function(){
-//     return User::create([
-//         'name' => 'زهیر خنیاگر',
-//         'email' => 'zoheir@gmail.com',
-//         'password' => bcrypt('123456'),
-//     ]);
-// });
 
 Route::get('/admin' , function(){
     return view('admin.main.index');
 })->middleware('auth')->name('admin');
+
+Route::get('student/all' , 'StudentController@all')->name('student.all')->middleware('auth');
 
 Route::resource('student', 'StudentController' , ['except' => [
     'index',
@@ -32,6 +27,8 @@ Route::resource('student', 'StudentController' , ['except' => [
 ]])->middleware('auth');
 
 Route::get('student/{student}' , 'StudentController@show')->name('student.show');
+
+
 
 Route::post('/search', 'StudentController@search')->name('student.search');
 

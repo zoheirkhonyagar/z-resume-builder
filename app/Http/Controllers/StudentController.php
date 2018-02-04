@@ -18,20 +18,6 @@ class StudentController extends Controller
     {
         $students = Student::orderBy('first_name', 'asc')
             ->paginate(12);
-//        $students = Student::paginate(12)->orderBy('name', 'desc');
-        //return $students;
-//        return $student = Student::create([
-//            'first_name' => 'سامان',
-//            'last_name' => 'پذیرنده',
-//            'father_name' => 'عباس',
-//            'email' => 'saman@gmail.com',
-//            'nationality' => 'ایرانی',
-//            'birthday_date' => '12/04/1376',
-//            'birth_place' => 'زاهدان',
-//            'address' => 'آدرس',
-//            'proof' => 'لیسانس کامپیوتر',
-//            'resume' => 'مدرس دوره برنامه نویسی'
-//        ]);
         $courses = Course::all();
         return view('main.index' , compact('students','courses'));
     }
@@ -127,7 +113,14 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        $student->delete();
+        return back();
+    }
+
+    public function all()
+    {
+        $students = Student::paginate(10);
+        return view('admin.student.all' , compact('students'));
     }
 
     public function search(Request $request)
@@ -140,10 +133,7 @@ class StudentController extends Controller
         }else{
             $students = $course->students->where( 'first_name', $request->input('first_name') )->Where('last_name', $request->input('last_name'));
         }
-
-//        $error = empt($students) ? "<h2> نتیجه ای یافت نشد ! </h2>" : "";
-//        return $students;
-//        $students = Student::orderBy('first_name', 'asc')->paginate(12);
+        
         $courses = Course::all();
         return view('main.student.search' , compact('students','courses','error'));
     }
