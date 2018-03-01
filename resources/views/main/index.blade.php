@@ -1,6 +1,6 @@
 @extends('main.master')
 @section('title')
-رزومه ها
+ایران آیدیا - رزومه ها
 @endsection
 
 @section('content')
@@ -30,7 +30,7 @@
         <div class="row placeholders" style="margin-top:30px;">
             @foreach($students as $student)
                 <div class="col-xs-6 col-sm-2 placeholder">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <img src="{{ $student->image != null ? "/" .$student->image['thumb'] : "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" }}" width="200" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>{{ $student->first_name . " " . $student->last_name }}</h4>
                     <a href="{{ route( 'student.show' , [ 'id' => $student->id ] ) }}">مشاهده رزومه</a>
                 </div>

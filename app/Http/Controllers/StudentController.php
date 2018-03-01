@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Course;
 use App\Student;
 use Illuminate\Http\Request;
+use App\Http\Controllers\AdminController;
 use Symfony\Component\Console\Helper\Helper;
 
-class StudentController extends Controller
+class StudentController extends AdminController
 {
     /**
      * Display a listing of the resource.
@@ -41,11 +43,15 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //return $request->input('first_name');
-        //return $request->all();
+        $file = $request->file('image');
+        $image = '';
+        if ($file) {
+            $image = $this->uploadImage($file);
+        }
         $student = Student::create([
             'first_name' => $request->input('first_name'),
             'last_name' => $request->input('last_name'),
+            'image' => $image,
             'national_number' => $request->input('national_number'),
             'father_name' => $request->input('father_name'),
             'email' => $request->input('email'),
@@ -54,7 +60,8 @@ class StudentController extends Controller
             'birth_place' => $request->input('birth_place'),
             'address' => $request->input('address'),
             'proof' => $request->input('proof'),
-            'resume' => $request->input('resume')
+            'resume' => $request->input('resume'),
+            'educational_experience' => $request->input('educational_experience')
         ]);
 
         $student->courses()->sync( array(

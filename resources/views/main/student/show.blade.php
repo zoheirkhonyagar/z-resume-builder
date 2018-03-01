@@ -1,6 +1,9 @@
 @extends('main.master')
 @section('title')
-    {{ $student->first_name . " " . $student->last_name }}
+{{ $student->first_name . " " . $student->last_name }}
+@endsection
+@section('description')
+{{ $student->first_name . " " . $student->last_name }}
 @endsection
 @section('custom-styles')
     <style>
@@ -13,7 +16,7 @@
 @section('content')
     <div class="row placeholders col-sm-8 col-md-offset-3" style="text-align: right;margin-top: 40px;">
         <div class="col-xs-12 col-sm-12 placeholder" style="text-align: center">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" class="img-responsive" alt="Generic placeholder thumbnail">
+            <img src="{{ $student->image != null ? "/" .$student->image['thumb'] : "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" }}" width="200" class="img-responsive" alt="Generic placeholder thumbnail">
         </div>
         <h4>نام : {{ $student->first_name }}</h4>
         <h4>نام خانوادگی : {{ $student->last_name }}</h4>
@@ -25,7 +28,8 @@
         <h4>محل تولد : {{ $student->birth_place }}</h4>
         <h4>آدرس : {{ $student->address }}</h4>
         <h4>مدرک تحصیلی : {{ $student->proof }}</h4>
-        <h4>رزومه کاری : {{ $student->resume }}</h4>
+        <h4>سوابق آمورشی : {{ $student->educational_experience }}</h4>
+        <h4>سوابق کاری : {{ $student->resume }}</h4>
         <hr style="border-top:1px solid #c0c0c0;">
         @foreach($student->courses as $course)
             <h4 style="margin:20px 0;background: #71d5cd; padding: 15px;">نام دوره : {{ $course->name }}</h4>

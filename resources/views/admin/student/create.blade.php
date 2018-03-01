@@ -137,8 +137,22 @@
                 </div>
             </div>
 
+            <div class="form-group{{ $errors->has('educational_experience') ? ' has-error' : '' }}">
+                <label for="educational_experience" class="col-md-3 control-label" style="text-align: right">سوابق آمورشی :</label>
+
+                <div class="col-md-7">
+                    <input id="educational_experience" type="text" class="form-control" name="educational_experience" value="{{ old('educational_experience') }}" autofocus>
+
+                    @if ($errors->has('educational_experience'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('educational_experience') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+
             <div class="form-group{{ $errors->has('resume') ? ' has-error' : '' }}">
-                <label for="resume" class="col-md-3 control-label" style="text-align: right">رزومه کاری :</label>
+                <label for="resume" class="col-md-3 control-label" style="text-align: right">سوابق کاری :</label>
 
                 <div class="col-md-7">
                     <textarea id="resume" class="form-control" name="resume">{{ old('resume') }}</textarea>
@@ -253,6 +267,20 @@
                     @if ($errors->has('total_score'))
                         <span class="help-block">
                             <strong>{{ $errors->first('total_score') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
+                <label for="image" class="col-md-3 control-label" style="text-align: right">تصویر دانشجو :</label>
+
+                <div class="col-md-7">
+                    <input type="file" id="image" class="form-control" name="image" value="{{ old('image') }}" autofocus>
+
+                    @if ($errors->has('image'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('image') }}</strong>
                         </span>
                     @endif
                 </div>

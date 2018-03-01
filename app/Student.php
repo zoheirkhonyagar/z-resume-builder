@@ -12,13 +12,19 @@ class Student extends Model
         'last_name',
         'national_number',
         'father_name',
+        'image',
         'email',
         'nationality',
         'birthday_date',
         'birth_place',
         'address',
         'proof',
-        'resume'
+        'resume',
+        'educational_experience'
+    ];
+
+    protected $casts = [
+        'image' => 'array'
     ];
 
     public function courses()
