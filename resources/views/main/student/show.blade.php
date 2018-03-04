@@ -26,6 +26,7 @@
         <h4>ملیت : {{ $student->nationality }}</h4>
         <h4>تاریخ تولد : {{ $student->birthday_date }}</h4>
         <h4>محل تولد : {{ $student->birth_place }}</h4>
+        <h4>شماره تماس : {{ $student->phone_number }}</h4>
         <h4>آدرس : {{ $student->address }}</h4>
         <h4>مدرک تحصیلی : {{ $student->proof }}</h4>
         <h4>سوابق آمورشی : {{ $student->educational_experience }}</h4>

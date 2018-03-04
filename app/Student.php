@@ -20,6 +20,7 @@ class Student extends Model
         'address',
         'proof',
         'resume',
+        'phone_number',
         'educational_experience'
     ];
 

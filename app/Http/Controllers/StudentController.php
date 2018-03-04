@@ -61,6 +61,7 @@ class StudentController extends AdminController
             'address' => $request->input('address'),
             'proof' => $request->input('proof'),
             'resume' => $request->input('resume'),
+            'phone_number' => $request->input('phone_number'),
             'educational_experience' => $request->input('educational_experience')
         ]);
 

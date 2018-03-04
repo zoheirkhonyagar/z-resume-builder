@@ -123,6 +123,20 @@
                 </div>
             </div>
 
+            <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
+                <label for="phone_number" class="col-md-3 control-label" style="text-align: right">شماره تماس :</label>
+
+                <div class="col-md-7">
+                    <input id="phone_number" type="text" class="form-control" name="phone_number" value="{{ old('phone_number') }}" autofocus>
+
+                    @if ($errors->has('phone_number'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('phone_number') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+
             <div class="form-group{{ $errors->has('proof') ? ' has-error' : '' }}">
                 <label for="proof" class="col-md-3 control-label" style="text-align: right">مدرک تحصیلی :</label>
 

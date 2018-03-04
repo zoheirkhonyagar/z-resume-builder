@@ -26,6 +26,7 @@ class CreateStudentsTable extends Migration
             $table->text('address')->nullable();
             $table->text('image')->nullable();
             $table->text('educational_experience')->nullable();
+            $table->string('phone_number')->nullable();
             $table->string('proof')->nullable();
             $table->text('resume')->nullable();
             $table->timestamps();
