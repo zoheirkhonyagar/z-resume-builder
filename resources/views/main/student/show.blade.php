@@ -29,7 +29,7 @@
         <h4>شماره تماس : {{ $student->phone_number }}</h4>
         <h4>آدرس : {{ $student->address }}</h4>
         <h4>مدرک تحصیلی : {{ $student->proof }}</h4>
-        <h4>سوابق آمورشی : {{ $student->educational_experience }}</h4>
+        <h4>سوابق آموزشی : {{ $student->educational_experience }}</h4>
         <h4>سوابق کاری : {{ $student->resume }}</h4>
         <hr style="border-top:1px solid #c0c0c0;">
         @foreach($student->courses as $course)
