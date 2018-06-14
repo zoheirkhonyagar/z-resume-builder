@@ -29,8 +29,8 @@
         </form>
         <div class="row placeholders" style="margin-top:30px;">
             @foreach($students as $student)
-                <div class="col-xs-6 col-sm-2 placeholder">
-                    <img src="{{ $student->image != null ? "/" .$student->image['thumb'] : "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" }}" width="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <div class="col-xs-12 col-md-3 placeholder">
+                    <img src="{{ $student->image != null ? "/public/" .$student->image['thumb'] : "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" }}" width="200" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>{{ $student->first_name . " " . $student->last_name }}</h4>
                     <a href="{{ route( 'student.show' , [ 'id' => $student->id ] ) }}">مشاهده رزومه</a>
                 </div>
